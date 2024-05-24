@@ -10,5 +10,6 @@ class Reservation(models.Model):
     patron = models.ForeignKey(Patron, on_delete=models.CASCADE)
     reservation_date = models.DateField()
     expiry_date = models.DateField()
+
     def __str__(self):
         return f"{self.book} - {self.patron} - {self.reservation_date}"

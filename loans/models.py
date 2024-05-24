@@ -11,4 +11,3 @@ class Loan(models.Model):
     loan_date = models.DateField()
     due_date = models.DateField()
     return_date = models.DateField()
-

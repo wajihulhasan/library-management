@@ -9,18 +9,36 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('events', '0001_initial'),
-        ('patrons', '0001_initial'),
+        ("events", "0001_initial"),
+        ("patrons", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='eventRegistration',
+            name="eventRegistration",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('registration_date', models.DateTimeField(auto_now_add=True)),
-                ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='events.event')),
-                ('patron', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='patrons.patron')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("registration_date", models.DateTimeField(auto_now_add=True)),
+                (
+                    "event",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="events.event"
+                    ),
+                ),
+                (
+                    "patron",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="patrons.patron"
+                    ),
+                ),
             ],
         ),
     ]

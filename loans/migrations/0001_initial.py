@@ -9,20 +9,38 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('books', '0001_initial'),
-        ('patrons', '0001_initial'),
+        ("books", "0001_initial"),
+        ("patrons", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Loan',
+            name="Loan",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('loan_date', models.DateField()),
-                ('due_date', models.DateField()),
-                ('return_date', models.DateField()),
-                ('book', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='books.book')),
-                ('patron', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='patrons.patron')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("loan_date", models.DateField()),
+                ("due_date", models.DateField()),
+                ("return_date", models.DateField()),
+                (
+                    "book",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="books.book"
+                    ),
+                ),
+                (
+                    "patron",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="patrons.patron"
+                    ),
+                ),
             ],
         ),
     ]

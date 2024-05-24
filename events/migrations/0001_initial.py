@@ -9,20 +9,34 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('locations', '0001_initial'),
+        ("locations", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Event',
+            name="Event",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('description', models.TextField()),
-                ('start_date', models.DateField()),
-                ('date', models.DateField()),
-                ('time', models.TimeField()),
-                ('location', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='locations.location')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=255)),
+                ("description", models.TextField()),
+                ("start_date", models.DateField()),
+                ("date", models.DateField()),
+                ("time", models.TimeField()),
+                (
+                    "location",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="locations.location",
+                    ),
+                ),
             ],
         ),
     ]

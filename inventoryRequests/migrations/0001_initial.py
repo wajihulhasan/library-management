@@ -7,18 +7,25 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='InventoryRequest',
+            name="InventoryRequest",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('requested_item', models.CharField(max_length=255)),
-                ('quantity', models.PositiveIntegerField()),
-                ('requested_date', models.DateField()),
-                ('status', models.CharField(max_length=255)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("requested_item", models.CharField(max_length=255)),
+                ("quantity", models.PositiveIntegerField()),
+                ("requested_date", models.DateField()),
+                ("status", models.CharField(max_length=255)),
             ],
         ),
     ]

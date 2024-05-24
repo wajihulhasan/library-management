@@ -11,5 +11,6 @@ class bookOrder(models.Model):
     quantity = models.IntegerField(default=1)
     order_date = models.DateTimeField(auto_now_add=True)
     status = models.BooleanField(default=False)
+
     def __str__(self):
-        return f'{self.supplier} {self.book} {self.quantity} {self.order_date}'
+        return f"{self.supplier} {self.book} {self.quantity} {self.order_date}"

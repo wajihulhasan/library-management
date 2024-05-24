@@ -9,5 +9,6 @@ class staffSchedule(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     days = models.IntegerField()
+
     def __str__(self):
         return str(self.employee)

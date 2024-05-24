@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class FinesConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'fines'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "fines"

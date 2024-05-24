@@ -9,23 +9,42 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('authors', '0001_initial'),
-        ('genres', '0001_initial'),
-        ('publishers', '0001_initial'),
+        ("authors", "0001_initial"),
+        ("genres", "0001_initial"),
+        ("publishers", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Book',
+            name="Book",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100)),
-                ('publish_date', models.DateField()),
-                ('quantity_available', models.PositiveSmallIntegerField(default=0)),
-                ('isbn', models.CharField(max_length=13, verbose_name='ISBN')),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='authors.author')),
-                ('genre', models.ManyToManyField(blank=True, to='genres.genre')),
-                ('publisher', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='publishers.publisher')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=100)),
+                ("publish_date", models.DateField()),
+                ("quantity_available", models.PositiveSmallIntegerField(default=0)),
+                ("isbn", models.CharField(max_length=13, verbose_name="ISBN")),
+                (
+                    "author",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="authors.author"
+                    ),
+                ),
+                ("genre", models.ManyToManyField(blank=True, to="genres.genre")),
+                (
+                    "publisher",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="publishers.publisher",
+                    ),
+                ),
             ],
         ),
     ]

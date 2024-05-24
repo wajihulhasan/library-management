@@ -9,17 +9,30 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('patrons', '0001_initial'),
+        ("patrons", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Notification',
+            name="Notification",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('message', models.TextField()),
-                ('date', models.DateTimeField(auto_now_add=True)),
-                ('patron', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='patrons.patron')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("message", models.TextField()),
+                ("date", models.DateTimeField(auto_now_add=True)),
+                (
+                    "patron",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="patrons.patron"
+                    ),
+                ),
             ],
         ),
     ]

@@ -12,6 +12,5 @@ class Book(models.Model):
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     publish_date = models.DateField()
     quantity_available = models.PositiveSmallIntegerField(default=0)
-    isbn = models.CharField('ISBN', max_length=13)
+    isbn = models.CharField("ISBN", max_length=13)
     genre = models.ManyToManyField(Genre, blank=True)
-

@@ -9,18 +9,31 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('loans', '0001_initial'),
+        ("loans", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Fine',
+            name="Fine",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('amount', models.PositiveIntegerField()),
-                ('reason', models.TextField()),
-                ('status', models.BooleanField(default=False)),
-                ('loan', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='loans.loan')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("amount", models.PositiveIntegerField()),
+                ("reason", models.TextField()),
+                ("status", models.BooleanField(default=False)),
+                (
+                    "loan",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="loans.loan"
+                    ),
+                ),
             ],
         ),
     ]

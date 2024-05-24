@@ -9,20 +9,39 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('books', '0001_initial'),
-        ('supplier', '0001_initial'),
+        ("books", "0001_initial"),
+        ("supplier", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='bookOrder',
+            name="bookOrder",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('quantity', models.IntegerField(default=1)),
-                ('order_date', models.DateTimeField(auto_now_add=True)),
-                ('status', models.BooleanField(default=False)),
-                ('book', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='books.book')),
-                ('supplier', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='supplier.supplier')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("quantity", models.IntegerField(default=1)),
+                ("order_date", models.DateTimeField(auto_now_add=True)),
+                ("status", models.BooleanField(default=False)),
+                (
+                    "book",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="books.book"
+                    ),
+                ),
+                (
+                    "supplier",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="supplier.supplier",
+                    ),
+                ),
             ],
         ),
     ]
