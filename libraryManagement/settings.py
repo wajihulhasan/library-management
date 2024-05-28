@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+]
+
+CUSTOM_APPS=[
     "books",
     "authors",
     "publishers",
@@ -59,8 +63,9 @@ INSTALLED_APPS = [
     "userLogs",
     "notifications",
     "reservations",
-]
 
+]
+INSTALLED_APPS += CUSTOM_APPS
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
