@@ -4,13 +4,18 @@ from django.db import models
 
 
 class Department(models.Model):
-    name = models.CharField(max_length=100,unique=True,help_text="Department Name",error_messages={"unique":"A department with that name already exists"})
+    name = models.CharField(
+        max_length=100,
+        unique=True,
+        help_text="Department Name",
+        error_messages={"unique": "A department with that name already exists"},
+    )
     description = models.TextField()
 
     class Meta:
         verbose_name = "Department"
         verbose_name_plural = "Departments"
-        ordering = ['name']
+        ordering = ["name"]
 
     def __str__(self):
         return self.name

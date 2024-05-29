@@ -11,9 +11,8 @@ class Fine(models.Model):
     status = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['loan', 'amount']
-        unique_together = ('loan', 'amount')
-
+        ordering = ["loan", "amount"]
+        unique_together = ("loan", "amount")
 
     def __str__(self):
-        return f'{self.loan.loan_date} - {self.amount}'
+        return f"{self.loan.loan_date} - {self.amount}"

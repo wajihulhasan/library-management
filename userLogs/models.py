@@ -10,12 +10,11 @@ class UserLog(models.Model):
     ip_address = models.GenericIPAddressField()
 
     class Meta:
-        unique_together = (('user', 'date'),)
-        verbose_name = 'User Logs'
-        verbose_name_plural = 'User Logs'
-        ordering = ['-date']
-        get_latest_by = 'date'
-
+        unique_together = (("user", "date"),)
+        verbose_name = "User Logs"
+        verbose_name_plural = "User Logs"
+        ordering = ["-date"]
+        get_latest_by = "date"
 
     def __str__(self):
         return self.date

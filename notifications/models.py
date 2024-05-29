@@ -13,7 +13,7 @@ class Notification(models.Model):
         unique_together = (("date", "patron"),)
         verbose_name = "Notification"
         verbose_name_plural = "Notifications"
-        ordering = ['-date']
+        ordering = ["-date"]
 
     def __str__(self):
         return self.message
