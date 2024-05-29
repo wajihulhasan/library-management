@@ -3,8 +3,8 @@ from .views import StaffScheduleListView, StaffScheduleDetailView, CreateStaffSc
 
 urlpatterns = [
     path("", StaffScheduleListView.as_view(), name="staff_schedule_list"),
-    path("create/", CreateStaffScheduleView.as_view(), name="staff_schedule_create"),
+    path("create/", StaffScheduleCreateView.as_view(), name="staff_schedule_create"),
     path("<int:pk>/get/", StaffScheduleDetailView.as_view(), name="staff_schedule_detail"),
-    path("<int:pk>/delete/", DeleteStaffScheduleView.as_view(), name="staff_schedule_delete"),
-    path("<int:pk>/edit/", UpdateStaffScheduleView.as_view(), name="staff_schedule_edit")
+    path("<int:pk>/delete/", StaffScheduleDeleteView.as_view(), name="staff_schedule_delete"),
+    path("<int:pk>/edit/", StaffScheduleUpdateView.as_view(), name="staff_schedule_edit")
 ]

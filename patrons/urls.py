@@ -3,8 +3,8 @@ from .views import PatronListView, PatronDetailView, CreatePatronView, DeletePat
 
 urlpatterns = [
     path("", PatronListView.as_view(), name="patron_list"),
-    path("create/", CreatePatronView.as_view(), name="patron_create"),
+    path("create/", PatronCreateView.as_view(), name="patron_create"),
     path("<int:pk>/get/", PatronDetailView.as_view(), name="patron_detail"),
-    path("<int:pk>/delete/", DeletePatronView.as_view(), name="patron_delete"),
-    path("<int:pk>/edit/", UpdatePatronView.as_view(), name="patron_edit")
+    path("<int:pk>/delete/", PatronDeleteView.as_view(), name="patron_delete"),
+    path("<int:pk>/edit/", PatronUpdateView.as_view(), name="patron_edit")
 ]

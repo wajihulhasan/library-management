@@ -3,10 +3,10 @@ from .views import BookOrderListView, BookOrderDetailView, CreateBookOrderView, 
 
 urlpatterns = [
     path("", BookOrderListView.as_view(), name="book_order_list"),
-    path("create/", CreateBookOrderView.as_view(), name="book_order_create"),
+    path("create/", BookOrderCreateView.as_view(), name="book_order_create"),
     path("<int:pk>/get/", BookOrderDetailView.as_view(), name="book_order_detail"),
-    path("<int:pk>/delete/", DeleteBookOrderView.as_view(), name="book_order_delete"),
-    path("<int:pk>/edit/", UpdateBookOrderView.as_view(), name="book_order_edit")
+    path("<int:pk>/delete/", BookOrderDeleteView.as_view(), name="book_order_delete"),
+    path("<int:pk>/edit/", BookOrderUpdateView.as_view(), name="book_order_edit")
 ]
 
 

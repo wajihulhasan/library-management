@@ -3,8 +3,8 @@ from .views import SupplierListView, SupplierDetailView, CreateSupplierView, Del
 
 urlpatterns = [
     path("", SupplierListView.as_view(), name="supplier_list"),
-    path("create/", CreateSupplierView.as_view(), name="supplier_create"),
+    path("create/", SupplierCreateView.as_view(), name="supplier_create"),
     path("<int:pk>/get/", SupplierDetailView.as_view(), name="supplier_detail"),
-    path("<int:pk>/delete/", DeleteSupplierView.as_view(), name="supplier_delete"),
-    path("<int:pk>/edit/", UpdateSupplierView.as_view(), name="supplier_edit")
+    path("<int:pk>/delete/", SupplierDeleteView.as_view(), name="supplier_delete"),
+    path("<int:pk>/edit/", SupplierUpdateView.as_view(), name="supplier_edit")
 ]

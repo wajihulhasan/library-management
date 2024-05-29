@@ -3,8 +3,8 @@ from .views import NotificationListView, NotificationDetailView, CreateNotificat
 
 urlpatterns = [
     path("", NotificationListView.as_view(), name="notification_list"),
-    path("create/", CreateNotificationView.as_view(), name="notification_create"),
+    path("create/", NotificationCreateView.as_view(), name="notification_create"),
     path("<int:pk>/get/", NotificationDetailView.as_view(), name="notification_detail"),
-    path("<int:pk>/delete/", DeleteNotificationView.as_view(), name="notification_delete"),
-    path("<int:pk>/edit/", UpdateNotificationView.as_view(), name="notification_edit")
+    path("<int:pk>/delete/", NotificationDeleteView.as_view(), name="notification_delete"),
+    path("<int:pk>/edit/", NotificationUpdateView.as_view(), name="notification_edit")
 ]

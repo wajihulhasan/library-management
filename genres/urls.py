@@ -3,8 +3,8 @@ from .views import GenreListView, GenreDetailView, CreateGenreView, DeleteGenreV
 
 urlpatterns = [
     path("", GenreListView.as_view(), name="genre_list"),
-    path("create/", CreateGenreView.as_view(), name="genre_create"),
-    path("<int:pk>/get/", GenreDetailView.as_view(), name="genre_detail"),
-    path("<int:pk>/delete/", DeleteGenreView.as_view(), name="genre_delete"),
-    path("<int:pk>/edit/", UpdateGenreView.as_view(), name="genre_edit")
+    path("create/", GenreCreateView.as_view(), name="genre_create"),
+    path("<int:pk>/get/", DetailGenreView.as_view(), name="genre_detail"),
+    path("<int:pk>/delete/", GenreDeleteView.as_view(), name="genre_delete"),
+    path("<int:pk>/edit/", GenreUpdateView.as_view(), name="genre_edit")
 ]

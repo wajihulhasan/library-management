@@ -3,8 +3,8 @@ from .views import FineListView, FineDetailView, CreateFineView, DeleteFineView,
 
 urlpatterns = [
     path("", FineListView.as_view(), name="fine_list"),
-    path("create/", CreateFineView.as_view(), name="fine_create"),
+    path("create/", FineCreateView.as_view(), name="fine_create"),
     path("<int:pk>/get/", FineDetailView.as_view(), name="fine_detail"),
-    path("<int:pk>/delete/", DeleteFineView.as_view(), name="fine_delete"),
-    path("<int:pk>/edit/", UpdateFineView.as_view(), name="fine_edit")
+    path("<int:pk>/delete/", FineDeleteView.as_view(), name="fine_delete"),
+    path("<int:pk>/edit/", FineUpdateView.as_view(), name="fine_edit")
 ]
