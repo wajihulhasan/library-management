@@ -1,15 +1,16 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from authors.models import Author
 
 
 # Create your views here.
-class AuthorViewList(ListView):
+class AuthorListView(ListView):
     model = Author
     context_object_name = 'authors'
 
-class AuthorViewDetail(DetailView):
+class AuthorDetailView(DetailView):
     model = Author
     context_object_name = 'author'
 

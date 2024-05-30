@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PositionListView, PositionDetailView, CreatePositionView, DeletePositionView, UpdatePositionView
+from .views import PositionListView, PositionDetailView, PositionCreateView, PositionDeleteView, PositionUpdateView
 
 urlpatterns = [
     path("", PositionListView.as_view(), name="position_list"),

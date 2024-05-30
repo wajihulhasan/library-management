@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import StaffScheduleListView, StaffScheduleDetailView, CreateStaffScheduleView, DeleteStaffScheduleView, UpdateStaffScheduleView
+from .views import StaffScheduleListView, StaffScheduleDetailView, StaffScheduleCreateView, StaffScheduleDeleteView, StaffScheduleUpdateView
 
 urlpatterns = [
     path("", StaffScheduleListView.as_view(), name="staff_schedule_list"),

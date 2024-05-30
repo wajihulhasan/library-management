@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import AuthorListView, AuthorDetailView, CreateAuthorView, DeleteAuthorView, UpdateAuthorView
+from .views import AuthorListView, AuthorDetailView, AuthorCreateView, AuthorDeleteView, AuthorUpdateView
 
 urlpatterns = [
     path("", AuthorListView.as_view(), name="author_list"),

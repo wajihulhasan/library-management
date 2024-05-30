@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PatronListView, PatronDetailView, CreatePatronView, DeletePatronView, UpdatePatronView
+from .views import PatronListView, PatronDetailView, PatronCreateView, PatronDeleteView, PatronUpdateView
 
 urlpatterns = [
     path("", PatronListView.as_view(), name="patron_list"),

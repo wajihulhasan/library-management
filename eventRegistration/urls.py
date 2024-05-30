@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import EventRegistrationListView, EventRegistrationDetailView, CreateEventRegistrationView, DeleteEventRegistrationView, UpdateEventRegistrationView
+from .views import EventRegistrationListView, EventRegistrationDetailView, EventRegistrationCreateView, \
+    EventRegistrationDeleteView, EventRegistrationUpdateView
 
 urlpatterns = [
     path("", EventRegistrationListView.as_view(), name="event_registration_list"),

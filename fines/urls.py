@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import FineListView, FineDetailView, CreateFineView, DeleteFineView, UpdateFineView
+from .views import FineListView, FineDetailView, FineCreateView, FineDeleteView, FineUpdateView
 
 urlpatterns = [
     path("", FineListView.as_view(), name="fine_list"),

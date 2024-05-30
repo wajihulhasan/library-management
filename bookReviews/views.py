@@ -1,5 +1,10 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+
+from bookReviews.models import BookReview
+
+
 # Create your views here.
 class BookReviewListView(ListView):
     model = BookReview

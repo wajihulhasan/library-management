@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import DepartmentListView, DepartmentDetailView, CreateDepartmentView, DeleteDepartmentView, UpdateDepartmentView
+from .views import DepartmentListView, DepartmentDetailView, DepartmentCreateView, DepartmentDeleteView, DepartmentUpdateView
 
 urlpatterns = [
     path("", DepartmentListView.as_view(), name="department_list"),

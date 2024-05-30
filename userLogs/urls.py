@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import UserLogListView, UserLogDetailView, CreateUserLogView, DeleteUserLogView, UpdateUserLogView
+from .views import UserLogListView, UserLogDetailView, UserLogCreateView, UserLogDeleteView, UserLogUpdateView
 
 urlpatterns = [
     path("", UserLogListView.as_view(), name="user_log_list"),
