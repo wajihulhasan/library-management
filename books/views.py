@@ -9,19 +9,23 @@ from books.models import Book
 
 class BookListView(ListView):
     model = Book
+    context_object_name = 'books'
 
-
-class CreateBookView(CreateView):
+class BookCreateView(CreateView):
     model = Book
     fields = "__all__"
+    success_url = reverse_lazy('book_list')
 
 
 class BookDetailView(DetailView):
     model = Book
-class DeleteBookView(DeleteView):
+    context_object_name = 'book'
+class BookDeleteView(DeleteView):
     model = Book
+    success_url = reverse_lazy('book_list')
 
 
-class UpdateBookView(UpdateView):
+class BookUpdateView(UpdateView):
     model = Book
     fields = "__all__"
+    success_url = reverse_lazy('book_list')
