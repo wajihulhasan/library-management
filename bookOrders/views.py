@@ -16,7 +16,7 @@ class BookOrderCreateView(CreateView):
 
 class BookOrderUpdateView(UpdateView):
     model = BookOrder
-    success_url = reverse_lazy('book_order_list')
+    success_url = reverse_lazy('book_order_detail')
 
 class BookOrderDeleteView(DeleteView):
     model = BookOrder

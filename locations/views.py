@@ -23,6 +23,6 @@ class LocationDeleteView(DeleteView):
 
 class LocationUpdateView(UpdateView):
     model = Location
-    success_url = reverse_lazy('location_list')
+    success_url = reverse_lazy('location_detail')
 
 

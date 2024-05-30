@@ -22,5 +22,5 @@ class InventoryRequestDeleteView(DeleteView):
 
 class InventoryRequestUpdateView(UpdateView):
     model = InventoryRequest
-    success_url = reverse_lazy('inventory_request_list')
+    success_url = reverse_lazy('inventory_request_detail')
 

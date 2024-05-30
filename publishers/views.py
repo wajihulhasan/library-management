@@ -19,7 +19,7 @@ class PublisherCreateView(CreateView):
 
 class PublisherUpdateView(UpdateView):
     model = Position
-    success_url = reverse_lazy('publisher_list')
+    success_url = reverse_lazy('publisher_detail')
 
 class PublisherDeleteView(DeleteView):
     model = Position

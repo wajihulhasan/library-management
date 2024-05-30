@@ -22,4 +22,4 @@ class EventRegistrationDeleteView(DeleteView):
 
 class EventRegistrationUpdateView(UpdateView):
     model = EventRegistration
-    success_url = reverse_lazy('event_registration_list')
+    success_url = reverse_lazy('event_registration_detail')

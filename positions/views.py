@@ -19,7 +19,7 @@ class PositionCreateView(CreateView):
 
 class PositionUpdateView(UpdateView):
     model = Position
-    success_url = reverse_lazy('position_list')
+    success_url = reverse_lazy('position_detail')
 
 class PositionDeleteView(DeleteView):
     model = Position

@@ -19,7 +19,7 @@ class PatronCreateView(CreateView):
 
 class PatronUpdateView(UpdateView):
     model = Patron
-    success_url = reverse_lazy('patron_list')
+    success_url = reverse_lazy('patron_detail')
 
 class PatronDeleteView(DeleteView):
     model = Patron

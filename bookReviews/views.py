@@ -11,13 +11,11 @@ class BookReviewDetailView(DetailView):
 
 class BookReviewCreateView(CreateView):
     model = BookReview
-    fields = '__all__'
     success_url = reverse_lazy('book_review_list')
 
 class BookReviewUpdateView(UpdateView):
     model = BookReview
-    fields = '__all__'
-    success_url = reverse_lazy('book_review_list')
+    success_url = reverse_lazy('book_review_detail')
 
 class BookReviewDeleteView(DeleteView):
     model = BookReview

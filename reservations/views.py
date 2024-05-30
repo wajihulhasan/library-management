@@ -23,5 +23,5 @@ class ReservationDeleteView(DeleteView):
 
 class ReservationUpdateView(UpdateView):
     model = Reservation
-    success_url = reverse_lazy('reservation_list')
+    success_url = reverse_lazy('reservation_detail')
 

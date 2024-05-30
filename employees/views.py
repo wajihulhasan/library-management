@@ -21,4 +21,7 @@ class EmployeeDeleteView(DeleteView):
     model = Employee
     success_url = reverse_lazy('employee_list')
 
+class EmployeeUpdateView(UpdateView):
+    model = Employee
+    success_url = reverse_lazy('employee_detail')
 

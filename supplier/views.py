@@ -2,26 +2,28 @@ from django.shortcuts import render
 
 from django.views.generic import ListView, DetailView, CreateView, DeleteView,  UpdateView
 
-from .models import UserLog
+from .models import Supplier
 
-class UserLogListView(ListView):
-    model = UserLog
-    context_object_name = 'logs'
+class SupplierListView(ListView):
+    model = Supplier
+    context_object_name = 'suppliers'
 
-class UserLogDetailView(DetailView):
-    model = UserLog
-    context_object_name = 'log'
+class SupplierDetailView(DetailView):
+    model = Supplier
+    context_object_name = 'supplier'
 
-class UserLogCreateView(CreateView):
-    model = UserLog
-    success_url = reverse_lazy('userlog_list')
+class SupplierCreateView(CreateView):
+    model = Supplier
+    success_url = reverse_lazy('supplier_list')
 
-class UserLogUpdateView(UpdateView):
-    model = UserLog
-    success_url = reverse_lazy('userlog_list')
+class SupplierUpdateView(UpdateView):
+    model = Supplier
+    success_url = reverse_lazy('supplier_detail')
 
-class UserLogDeleteView(DeleteView):
-    model = UserLog
-    success_url = reverse_lazy('userlog_list')
+class SupplierDeleteView(DeleteView):
+    model = Supplier
+    success_url = reverse_lazy('supplier_list')
+
+
 
 

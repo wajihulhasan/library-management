@@ -22,5 +22,5 @@ class LoanDeleteView(DeleteView):
 
 class LoanUpdateView(UpdateView):
     model = Loan
-    success_url = reverse_lazy('loan_list')
+    success_url = reverse_lazy('loan_detail')
 

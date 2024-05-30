@@ -19,7 +19,7 @@ class StaffScheduleCreateView(CreateView):
 
 class StaffScheduleUpdateView(UpdateView):
     model = StaffSchedule
-    success_url = reverse_lazy('staff_schedule_list')
+    success_url = reverse_lazy('staff_schedule_detail')
 
 class StaffScheduleDeleteView(DeleteView):
     model = StaffSchedule

@@ -19,6 +19,7 @@ class AuthorCreateView(CreateView):
 
 class AuthorUpdateView(UpdateView):
     model = Author
+    success_url = reverse_lazy('author_detail')
 
 
 class AuthorDeleteView(DeleteView):

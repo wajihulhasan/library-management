@@ -14,13 +14,11 @@ class FineDetailView(DetailView):
 
 class FineCreateView(CreateView):
     model = Fine
-    fields = '__all__'
     success_url = reverse_lazy('fine_list')
 
 class FineUpdateView(UpdateView):
     model = Fine
-    fields = '__all__'
-    success_url = reverse_lazy('fine_list')
+    success_url = reverse_lazy('fine_detail')
 
 class FineDeleteView(DeleteView):
     model = Fine

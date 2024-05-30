@@ -18,7 +18,7 @@ class EventCreateView(CreateView):
 
 class EventUpdateView(UpdateView):
     model = Event
-    success_url = reverse_lazy('event_list')
+    success_url = reverse_lazy('event_detail')
 
 class EventDeleteView(DeleteView):
     model = Event

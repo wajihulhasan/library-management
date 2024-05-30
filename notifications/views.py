@@ -23,7 +23,7 @@ class NotificationDeleteView(DeleteView):
 
 class NotificationUpdateView(UpdateView):
     model = Notification
-    success_url = reverse_lazy('notification_list')
+    success_url = reverse_lazy('notification_detail')
 
 
 

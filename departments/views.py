@@ -13,13 +13,11 @@ class DepartmentDetailView(DetailView):
 
 class DepartmentCreateView(CreateView):
     model = Department
-    fields = '__all__'
     success_url = reverse_lazy('department_list')
 
 class DepartmentUpdateView(UpdateView):
     model = Department
-    fields = '__all__'
-    success_url = reverse_lazy('department_list')
+    success_url = reverse_lazy('department_detail')
 
 class DepartmentDeleteView(DeleteView):
     model = Department

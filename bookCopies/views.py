@@ -17,7 +17,7 @@ class BookCopyCreateView(CreateView):
 
 class BookCopyUpdateView(UpdateView):
     model = BookCopy
-    success_url = reverse_lazy('book_copies_list')
+    success_url = reverse_lazy('book_copies_detail')
 
 class BookCopyDeleteView(DeleteView):
     model = BookCopy
