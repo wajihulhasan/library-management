@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block title %}Book form{% endblock title %}
+
+{% block content %}
+<style>
+    .form-body{
+        padding: 10px;
+    background-color: aliceblue;
+    margin-top: 50px;
+    border-radius: 10px;
+    }
+</style>
+<form class="container form-body" method="POST"  action="{% if object.id %}{% url 'books:book_edit' pk=object.id %}{% else %}{% url 'books:book_create' %}{% endif %}">
+    {%if object.id%}<h1 class="text-center">Edit Book</h1>{%else%}<h1 class="text-center">Add Book</h1>{% endif %}
+
+    <!-- Security token -->
+    {% csrf_token %}
+
+    <div class="form-group form-body">
+         <!-- Using the formset -->
+    {{ form.as_p }}
+    </div>
+
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+{% endblock content %}

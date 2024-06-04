@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class="container mt-3">
+        <a class="btn btn-primary" href="{% url 'books:book_list'%}">Back</a>
+        <h1>Employee Detail</h1>
+        <p>Employee Name:  {{employee.name}}</p>
+        <p>Employee Email: {{employee.email}}</p>
+        <p>Employee Hiring Date: {{employee.hire_date}}</p>
+        <p>Employee Position: {{employee.position}}</p>
+
+    </div>
+
+<!--    <p>{{book.authro}}</p>-->
+<!--    <p>{{publisher}}</p>-->
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+
+{% extends "base.html" %}
+
+
+{% block title %}Book detail{% endblock title %}
+{% block content %}
+
+<form method="POST" >
+        {%csrf_token%}
+        <h1>Please confirm to delete the book copy record</h1>
+        {{ form.as_p }}
+        <input  class="btn  btn-secondary" type="submit" value="Submit">
+    </form>

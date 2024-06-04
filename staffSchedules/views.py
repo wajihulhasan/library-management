@@ -1,29 +1,39 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 
-from django.views.generic import ListView, DetailView, CreateView, DeleteView,  UpdateView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    DeleteView,
+    UpdateView,
+)
 
 from .models import StaffSchedule
+
 # Create your views here.
+
 
 class StaffScheduleListView(ListView):
     model = StaffSchedule
-    context_object_name = 'staff_schedules'
+    context_object_name = "staff_schedules"
+
 
 class StaffScheduleDetailView(DetailView):
     model = StaffSchedule
-    context_object_name = 'staff_schedule'
+    context_object_name = "staff_schedule"
+
 
 class StaffScheduleCreateView(CreateView):
     model = StaffSchedule
-    success_url = reverse_lazy('staff_schedule_list')
+    success_url = reverse_lazy("staff_schedule_list")
+
 
 class StaffScheduleUpdateView(UpdateView):
     model = StaffSchedule
-    success_url = reverse_lazy('staff_schedule_detail')
+    success_url = reverse_lazy("staff_schedule_detail")
+
 
 class StaffScheduleDeleteView(DeleteView):
     model = StaffSchedule
-    success_url = reverse_lazy('staff_schedule_list')
-
-
+    success_url = reverse_lazy("staff_schedule_list")

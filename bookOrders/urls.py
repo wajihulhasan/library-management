@@ -1,12 +1,16 @@
 from django.urls import path
-from .views import BookOrderListView, BookOrderDetailView, BookOrderCreateView, BookOrderDeleteView, BookOrderUpdateView
+from .views import (
+    BookOrderListView,
+    BookOrderDetailView,
+    BookOrderCreateView,
+    BookOrderDeleteView,
+    BookOrderUpdateView,
+)
 
 urlpatterns = [
     path("", BookOrderListView.as_view(), name="book_order_list"),
     path("create/", BookOrderCreateView.as_view(), name="book_order_create"),
     path("<int:pk>/get/", BookOrderDetailView.as_view(), name="book_order_detail"),
     path("<int:pk>/delete/", BookOrderDeleteView.as_view(), name="book_order_delete"),
-    path("<int:pk>/edit/", BookOrderUpdateView.as_view(), name="book_order_edit")
+    path("<int:pk>/edit/", BookOrderUpdateView.as_view(), name="book_order_edit"),
 ]
-
-

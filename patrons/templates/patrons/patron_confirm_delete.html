@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="container mt-4">
+    <form  method="POST" action="{% url 'patrons:patron_delete' patron.id %}" >
+
+    <!-- Security token -->
+        {% csrf_token %}
+        <h1>Please confirm to delete the {{patron.name}} patron</h1>
+        {{ form.as_p }}
+
+        <input  class="btn  btn-secondary" type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

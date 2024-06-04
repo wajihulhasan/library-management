@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block title %}Book form{% endblock title %}
+
+{% block content %}
+<style>
+        .book-detail{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            font-size: xx-large;
+            font-style: oblique;
+            background-color: aliceblue;
+            border-radius: 10px;
+        }
+    </style>
+
+    <div class="container book-detail mt-3">
+        <h1>Book Review Detail</h1>
+        <p>Book Name:  {{review.name}}</p>
+        <p>Book Review: {{review.review_text}}</p>
+        <p>Book Rating: {{review.rating}}</p>
+        <p>Review Date: {{review.date}}</p>
+
+    </div>
+{% endblock content %}
+<!--    <p>{{book.authro}}</p>-->
+<!--    <p>{{publisher}}</p>-->

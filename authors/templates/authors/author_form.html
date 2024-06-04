@@ -1,0 +1,31 @@
+
+
+{% extends "base.html" %}
+
+
+{% block title %}Author form{% endblock title %}
+
+{% block content %}
+<style>
+    .form-body{
+        padding: 10px;
+    background-color: aliceblue;
+    margin-top: 50px;
+    border-radius: 10px;
+        height: calc(100vh - 200px);
+    }
+</style>
+<form class="container form-body" method="POST"  action="{% if object.id %}{% url 'authors:author_edit' pk=object.id %}{% else %}{% url 'authors:author_create' %}{% endif %}">
+
+    <!-- Security token -->
+    {% csrf_token %}
+
+    <!-- Using the formset -->
+    <div class="container mt-5">
+        {%if object.id%}<h1 class="text-center">Edit Author</h1>{%else%}<h1 class="text-center">Add Author</h1>{% endif %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+
+</form>
+{% endblock content %}

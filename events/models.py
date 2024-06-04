@@ -11,7 +11,6 @@ class Event(models.Model):
         error_messages={"max_length": "Event title must be less than 256 characters"},
     )
     description = models.TextField(help_text="Event description")
-    start_date = models.DateField(help_text="Event start date")
     date = models.DateField(help_text="Event date")
     time = models.TimeField(help_text="Event time")
     location = models.ForeignKey(Location, on_delete=models.CASCADE)

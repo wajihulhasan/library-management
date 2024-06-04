@@ -2,8 +2,14 @@ from django.db import models
 
 # Create your models here.
 
-
+STATUS_CHOICES = [
+        ('AC', 'Active'),
+        ('EX', 'Expired'),
+        ('SU', 'Suspended'),
+        # Add other choices as needed
+    ]
 class Patron(models.Model):
+
     name = models.CharField(max_length=100, help_text="Name of patron")
     email = models.EmailField(
         help_text="Email of patron",
@@ -11,7 +17,12 @@ class Patron(models.Model):
         error_messages={"unique": "A patron with this email already exists."},
     )
     membership_date = models.DateField(help_text="Date of membership")
-    membership_status = models.CharField(max_length=100, help_text="Status of patron")
+    membership_status = models.CharField(
+        choices=STATUS_CHOICES,
+        max_length=12,
+        default='EX',
+        help_text='Status of patron'
+    )
     address = models.CharField(max_length=100, help_text="Address of patron")
 
     class Meta:

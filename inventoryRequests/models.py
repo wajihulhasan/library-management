@@ -2,6 +2,12 @@ from django.db import models
 
 
 # Create your models here.
+STATUS_CHOICES = [
+    ('PENDING', 'Pending'),
+    ('APPROVED', 'Approved'),
+    ('DENIED', 'Denied'),
+    ('FULFILLED', 'Fulfilled'),
+]
 class InventoryRequest(models.Model):
     requested_item = models.CharField(
         max_length=255, help_text="Enter the name of the item"
@@ -9,7 +15,7 @@ class InventoryRequest(models.Model):
     quantity = models.PositiveIntegerField(help_text="How many items do you have?")
     requested_date = models.DateField(help_text="Enter the date of request")
     status = models.CharField(
-        max_length=255, help_text="Enter the status of the request"
+        max_length=255, choices=STATUS_CHOICES, help_text="Enter the status of the request"
     )
 
     class Meta:

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class="container mt-3">
+        <a class="btn btn-primary" href="{% url 'events:event_list'%}">Back</a>
+        <h1>Event Detail</h1>
+        <p>Event Title:  {{event.title}}</p>
+        <p>Event Description: {{event.description}}</p>
+        <p>Event Date: {{event.date}}</p>
+        <p>Event Time: {{event.time}}</p>
+        <p>Event Location: {{event.location.name}}</p>
+    </div>
+
+<!--    <p>{{book.authro}}</p>-->
+<!--    <p>{{publisher}}</p>-->
+
+</body>
+</html>

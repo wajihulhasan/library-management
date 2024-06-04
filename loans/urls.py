@@ -1,5 +1,11 @@
 from django.urls import path
-from .views import LoanListView, LoanDetailView, LoanCreateView, LoanDeleteView, LoanUpdateView
+from .views import (
+    LoanListView,
+    LoanDetailView,
+    LoanCreateView,
+    LoanDeleteView,
+    LoanUpdateView,
+)
 
 
 class DetailLoanView:
@@ -11,5 +17,5 @@ urlpatterns = [
     path("create/", LoanCreateView.as_view(), name="loan_create"),
     path("<int:pk>/get/", LoanDetailView.as_view(), name="loan_detail"),
     path("<int:pk>/delete/", LoanDeleteView.as_view(), name="loan_delete"),
-    path("<int:pk>/edit/", LoanUpdateView.as_view(), name="loan_edit")
+    path("<int:pk>/edit/", LoanUpdateView.as_view(), name="loan_edit"),
 ]

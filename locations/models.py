@@ -2,6 +2,14 @@ from django.db import models
 
 
 # Create your models here.
+
+LOCATION_TYPE_CHOICES = [
+    ('LIBRARY', 'Library'),
+    ('READING_ROOM', 'Reading Room'),
+    ('STORAGE', 'Storage'),
+    ('OFFICE', 'Office'),
+    # Add other choices as needed
+]
 class Location(models.Model):
     name = models.CharField(
         max_length=100,
@@ -18,6 +26,8 @@ class Location(models.Model):
     capacity = models.IntegerField(help_text="Enter Capacity", default=0)
     type = models.CharField(
         max_length=100,
+        choices=LOCATION_TYPE_CHOICES,  # Add choices parameter
+        help_text="Select Location Type",
     )
 
     class Meta:

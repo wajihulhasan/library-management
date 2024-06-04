@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block title %}Book form{% endblock title %}
+
+{% block content %}
+    <style>
+        .author-detail{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            font-size: xx-large;
+            font-style: oblique;
+            background-color: aliceblue;
+            border-radius: 10px;
+            height: calc(100vh - 200px);
+        }
+    </style>
+<div class="container author-detail book-detail mt-3">
+    <h1>Author Detail</h1>
+    <p>Name: {{author.name}}</p>
+    <p>Bio: {{author.bio}}</p>
+    <p>Date of Birth: {{author.date_of_birth}}</p>
+    <p>Nationality: {{author.nationality}}</p>
+
+</div>
+
+{% endblock content %}

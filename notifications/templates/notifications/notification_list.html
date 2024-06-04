@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+<h1>Books List</h1>
+    <div class="d-flex justify-content-between m-3">
+        <h1>No.</h1>
+        <h1 class="w-25">Name</h1>
+        <h1>Action 1</h1>
+        <h1>Action 2</h1>
+        <h1>Action 3</h1>
+        <h1>Action 4</h1>
+
+    </div>
+{% for object in notifications %}
+    <div class="d-flex justify-content-between m-3">
+    <h1>{{ object.id }}</h1>
+    <h1 class="w-25">{{ object.message }}</h1>
+        <a class="btn btn-info d-flex align-items-center" href="{% url 'notifications:notification_create'%}">Add</a>
+    <a class="btn btn-primary d-flex align-items-center" href="{% url 'notifications:notification_edit' object.id %}">Edit</a>
+    <a class="btn btn-danger d-flex align-items-center" href="{% url 'notifications:notification_delete' object.id %}">Delete</a>
+        <a class="btn btn-dark d-flex align-items-center" href="{% url 'notifications:notification_detail' object.id %}">Detail</a>
+    </div>
+{% endfor %}
+</div>
+</body>
+</html>

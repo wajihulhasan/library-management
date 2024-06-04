@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>Title</title>
+</head>
+<body>
+<h1>Genres List</h1>
+    <div class="container">
+
+
+{% for object in genres %}
+    <div class="d-flex justify-content-around m-3">
+    <h1>{{ object.id }}</h1>
+    <h1 class="w-25">{{ object.name }}</h1>
+    <a class="btn btn-info d-flex align-items-center" href="{% url 'genres:genre_create' %}">Add</a>
+    <a class="btn btn-primary d-flex align-items-center" href="{% url 'genres:genre_edit' object.id %}">Edit</a>
+    <a class="btn btn-danger d-flex align-items-center" href="{% url 'genres:genre_delete' object.id %}">Delete</a>
+        <a class="btn btn-dark d-flex align-items-center" href="{% url 'genres:genre_detail' object.id %}">Detail</a>
+    </div>
+
+{% endfor %}
+</div>
+</body>
+</html>

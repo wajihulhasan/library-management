@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block title %}Book form{% endblock title %}
+
+{% block content %}
+    <style>
+        .book-detail{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            font-size: xx-large;
+            font-style: oblique;
+            background-color: aliceblue;
+            border-radius: 10px;
+        }
+    </style>
+<div class="container book-detail mt-3">
+    <p>{{book_order.supplier}}</p>
+    <p>{{book_order.book}}</p>
+    <p>{{book_order.quantity}}</p>
+    <p>{{book_order.order_date}}</p>
+    <p>{{book_order.status}}</p>
+</div>
+{% endblock content %}

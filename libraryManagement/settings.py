@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "bootstrap5",
 ]
 
 CUSTOM_APPS = [
@@ -63,7 +64,10 @@ CUSTOM_APPS = [
     "notifications",
     "reservations",
 ]
-INSTALLED_APPS += CUSTOM_APPS
+THIRDPARTY_APPS = [
+    # 'crispy_forms'
+]
+INSTALLED_APPS += CUSTOM_APPS + THIRDPARTY_APPS
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -135,14 +139,21 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
-
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+MEDIA_URL = "images/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Crispy form settings
+# CRISPY_TEMPLATE_PACK = 'uni_form'

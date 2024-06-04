@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+
+{% block title %}Book Copy detail{% endblock title %}
+{% block content %}
+<style>
+        .book-list{
+            background-color: aliceblue;
+            padding:10px;
+            border-radius: 10px;
+
+        }
+        .heading{
+            padding: 10px;
+        }
+    </style>
+
+<h1>Book Copy List</h1>
+    <div class="container">
+        <div class="d-flex justify-content-between m-3">
+
+        <p class="w-25">Name</p>
+            <p class="w-25">Acquisition Date</p>
+        <p>Action 1</p>
+        <p>Action 2</p>
+        <p>Action 3</p>
+            <p>Action 4</p>
+
+    </div>
+
+
+{% for object in bookcopies %}
+    <div class="d-flex justify-content-between m-3">
+    <h1 class="w-25">{{ object.book.title }}</h1>
+    <h1 class="w-25">{{ object.acquisition_date }}</h1>
+        <a class="btn btn-info d-flex align-items-center" href="{% url 'bookCopies:book_copies_create' %}">Add</a>
+        <a class="btn btn-primary d-flex align-items-center" href="{% url 'bookCopies:book_copies_edit' object.id %}">Edit</a>
+        <a class="btn btn-danger d-flex align-items-center" href="{% url 'bookCopies:book_copies_delete' object.id %}">Delete</a>
+        <a class="btn btn-dark d-flex align-items-center" href="{% url 'bookCopies:book_copies_detail' object.id %}">Detail</a>
+    </div>
+
+{% endfor %}
+</div>
+{% endblock content %}

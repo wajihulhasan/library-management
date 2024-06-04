@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class="container mt-3">
+        <a class="btn btn-primary" href="{% url 'positions:position_list'%}">Back</a>
+        <h1>Position Detail</h1>
+        <p>Position Title:  {{position.title}}</p>
+        <p>Position Responsibility: {{position.responsibility}}</p>
+        <p>Min Salary: {{position.min_salary}}</p>
+        <p>Max Salary: {{position.max_salary}}</p>
+
+    </div>
+
+<!--    <p>{{book.authro}}</p>-->
+<!--    <p>{{publisher}}</p>-->
+
+</body>
+</html>

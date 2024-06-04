@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="container" method="POST"  action="{% if object.id %}{% url 'departments:department_edit' pk=object.id %}{% else %}{% url 'departments:department_create' %}{% endif %}">
+    <h1>Add Department</h1>
+    <!-- Security token -->
+    {% csrf_token %}
+
+    <div class="form-group">
+         <!-- Using the formset -->
+    {{ form.as_p }}
+    </div>
+
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+
+</body>
+</html>

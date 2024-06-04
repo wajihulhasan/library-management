@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+
+
+{% block title %}Book detail{% endblock title %}
+{% block content %}
+    <form  method="POST" action="{% url 'authors:author_delete' author.id %}" >
+
+    <!-- Security token -->
+        {% csrf_token %}
+        <h1>Please confirm to delete the Author</h1>
+        {{ form.as_p }}
+
+        <input  class="btn  btn-secondary" type="submit" value="Submit">
+    </form>
+    {% endblock content %}

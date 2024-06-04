@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST"  action="{% if object.id %}{% url 'publishers:publisher_edit' pk=object.id %}{% else %}{% url 'publishers:publisher_create' %}{% endif %}">
+
+    <!-- Security token -->
+    {% csrf_token %}
+
+    <!-- Using the formset -->
+    <div class="container">
+        <h1>Add Publisher</h1>
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+
+</form>
+
+</body>
+</html>

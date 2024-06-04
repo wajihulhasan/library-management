@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>{% block title %}Title{% endblock title %}</title>
+     <style>
+        .sidebar {
+            height: 100vh;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            overflow-y:scroll
+        }
+        .sidebar a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .sidebar a:active {
+            background-color: #007bff;
+            color: white;
+        }
+        .sidebar .nav-list {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar .nav-list li {
+            margin-bottom: 10px;
+        }
+        .sidebar .nav-list li a{
+            text-align: center;
+        }
+        .image-container {
+                            width: 100%;
+                            height: 100%; /* Adjust based on your requirement */
+                            background-image: url("/static/images/books-library.jpg");
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+        }
+        .dimenssions{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+             font-family: Georgia, serif;
+        }
+        .title-margin{
+            margin-left: 101px;
+        }
+
+    </style>
+    <script>
+
+    </script>
+</head>
+<body class="dimenssions">
+<nav class="pl-3 navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand ml-2 title-margin" href="/">My Library</a>
+</nav>
+<div>
+
+</div>
+<div>
+    <div class="row">
+         <div class="col-2 sidebar">
+                <div class="d-flex flex-column">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="{% url 'books:book_list' %}">Books</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'authors:author_list' %}">Authors</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'bookCopies:book_copies_list' %}">Book Copies</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'events:event_list' %}">Event</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'loans:loan_list' %}">Loans</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'fines:fine_list' %}">Fines</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'bookOrders:book_order_list' %}">Book Order</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'bookReviews:book_review_list' %}">Book Reviews</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'departments:department_list' %}">Departments</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'employees:employee_list' %}">Employees</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'events:event_list' %}">Events</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'eventRegistration:event_registration_list' %}">Event Registration</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'fines:fine_list' %}">Fine</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'inventoryRequests:inventory_request_list' %}">Inventory Request</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'genres:genre_list' %}">Genre</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'locations:location_list' %}">Locations</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'patrons:patron_list' %}">Patrons</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'notifications:notification_list' %}">Notifications</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'publishers:publisher_list' %}">Publishers</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'positions:position_list' %}">Positions</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'reservations:reservation_list' %}">Reservations</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'supplier:supplier_list' %}">Suppliers</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        <div class="col-10 d-flex">
+            {% block content %}
+             <div class="image-container"></div>
+
+<!--                  <img  src="{% static '/images/library.jpeg' %}" alt="Library">-->
+            {% endblock content %}
+        </div>
+    </div>
+<!--    <div class="d-flex justify-content-between m-3">-->
+<!--        <a class="btn btn-info d-flex align-items-center" href="{% url 'books:book_list'%}">Books</a>-->
+
+<!--    </div>-->
+
+</div>
+
+</body>
+</html>

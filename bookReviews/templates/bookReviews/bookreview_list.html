@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Book list{% endblock title %}
+{% block content %}
+    <style>
+        .list{
+            background-color: aliceblue;
+            padding:10px;
+            border-radius: 10px;
+
+        }
+        .heading{
+            padding: 10px;
+        }
+    </style>
+<div class="container">
+<h1>Books Reviews List</h1>
+    <div class="d-flex heading justify-content-between m-3">
+
+        <p class="w-25">Name</p>
+        <p>Action 1</p>
+        <p>Action 2</p>
+        <p>Action 3</p>
+        <p>Action 4</p>
+
+    </div>
+{% for object in reviews %}
+    <div class="d-flex list justify-content-between m-3">
+    <h1 class="w-25">{{ object.review_text }}</h1>
+        <a class="btn btn-info d-flex align-items-center" href="{% url 'bookReviews:book_review_create'%}">Add</a>
+    <a class="btn btn-primary d-flex align-items-center" href="{% url 'bookReviews:book_review_edit' object.id %}">Edit</a>
+    <a class="btn btn-danger d-flex align-items-center" href="{% url 'bookReviews:book_review_delete' object.id %}">Delete</a>
+        <a class="btn btn-dark d-flex align-items-center" href="{% url 'bookReviews:book_review_detail' object.id %}">Detail</a>
+    </div>
+{% endfor %}
+</div>
+{% endblock content %}

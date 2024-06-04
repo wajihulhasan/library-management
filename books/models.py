@@ -27,6 +27,9 @@ class Book(models.Model):
     isbn = models.CharField("ISBN", max_length=13, help_text="ISBN of book")
     genre = models.ManyToManyField(Genre, blank=True, help_text="Genre of book")
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         ordering = ["title"]
         verbose_name = "Book"

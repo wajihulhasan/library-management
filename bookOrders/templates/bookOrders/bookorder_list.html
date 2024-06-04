@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+
+{% block title %}Book list{% endblock title %}
+{% block content %}
+    <style>
+        .book-list{
+            background-color: aliceblue;
+            padding:10px;
+            border-radius: 10px;
+
+        }
+        .heading{
+            padding: 10px;
+        }
+    </style>
+
+<div class="container">
+<h1>Books Orders List</h1>
+    <div class="d-flex heading justify-content-between m-3">
+
+        <p class="w-25">Name</p>
+        <p class="w-25">Supplier</p>
+        <p class="w-25">Quantity</p>
+        <p>Action 1</p>
+        <p>Action 2</p>
+        <p>Action 3</p>
+        <p>Action 4</p>
+
+    </div>
+{% for object in book_orders %}
+    <div class="d-flex book-list justify-content-between m-3">
+
+    <h1 class="w-25">{{ object.book.title }}</h1>
+        <h1 class="w-25">{{ object.supplier.name }}</h1>
+        <h1 class="w-25">{{ object.quantity }}</h1>
+        <a class="btn btn-info d-flex align-items-center" href="{% url 'bookOrders:book_order_create'%}">Add</a>
+    <a class="btn btn-primary d-flex align-items-center" href="{% url 'bookOrders:book_order_edit' object.id %}">Edit</a>
+    <a class="btn btn-danger d-flex align-items-center" href="{% url 'bookOrders:book_order_delete' object.id %}">Delete</a>
+        <a class="btn btn-dark d-flex align-items-center" href="{% url 'bookOrders:book_order_detail' object.id %}">Detail</a>
+    </div>
+{% endfor %}
+</div>
+{% endblock content %}

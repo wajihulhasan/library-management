@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class="container mt-3">
+        <a class="btn btn-primary" href="{% url 'fines:fine_list'%}">Back</a>
+        <h1>Fine Detail</h1>
+        <p>Book:  {{fine.loan}}</p>
+        <p>Fine Amount: {{fine.amount}}</p>
+        <p>Fine Reason: {{fine.reason}}</p>
+        <p>Fine Status: {{fine.status}}</p>
+    </div>
+
+<!--    <p>{{book.authro}}</p>-->
+<!--    <p>{{publisher}}</p>-->
+
+</body>
+</html>
